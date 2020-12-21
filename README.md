@@ -12,4 +12,4 @@ Für unseren Ausbilder, welcher dann ab und zu nen Blick drauf werfen kann oder 
 
 # Wie Funktioniert Das?
 
-Ist hier noch einfacher, als bei Java, weil Visual Studio ein integriertes System zur Kompatibilität mit Git hat. Ihr macht VS auf und werdet gefragt, welcher Code verwendet werden soll. Im rechten Reiter gibt es die Option 'Repository klonen', da clickt ihr drauf. Im Fenster 'Repositoryspeicherort'
+Ist hier noch einfacher, als bei Java, weil Visual Studio ein integriertes System zur Kompatibilität mit Git hat. Ihr macht VS auf und werdet gefragt, welcher Code verwendet werden soll. Im rechten Reiter gibt es die Option 'Repository klonen', da clickt ihr drauf. Im Fenster 'Repositoryspeicherort' gebt ihr dann den Link an, den ihr unter <> Code im Grünen Fenster [Code] kopieren könnt, ein. (https://github.com/RadiumLuminis/SRH-Neckargemuend-C--.git) Und fertig, den Rest versteht ihr sicher, wenn ihr ihn in Visual Studio seht.
