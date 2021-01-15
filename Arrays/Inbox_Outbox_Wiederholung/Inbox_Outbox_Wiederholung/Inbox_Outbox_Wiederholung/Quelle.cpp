@@ -35,8 +35,20 @@ void main()
 	outbox[a] = '*';											//Sternchen setzen
 	outbox[a+1] = '\0';											//Nullterminierung, um alles hinter dem letzten Buchstaben nicht als Datenmüll zu haben
 
-	cout << outbox << endl;
-	cout << "Länge des Wortes: " << i << endl;
+	cout << outbox << endl;										//Ausgabe des Wortes mit Sternchen
+	cout << "Länge des Wortes: " << i << endl;					//Ausgabe der Länge des Wortes
+
+	char outbox2[41];											//Noch ein Array
+
+	int laenge = i-1, z;										//Zwei Zählvariablen anlegen
+	for (z = 0; inbox[z] != '\0'; z++)							//Einfache Schleife, läuft bis zur Länge des Wortes (siehe vorher), man könnte auch z < i nehmen
+	{
+		outbox2[z] = inbox[laenge];								//Der gezählte Buchstabe des neuen Arrays wird zum umgekehrt gezählten Buchstaben der Inbox
+		laenge--;												//Zweite Variable läuft rückwärts: z läuft hoch, laenge läuft runter
+	}
+	outbox2[z] = '\0';											//Nullterminierung nicht vergessen
+
+	cout << outbox2 << endl;									//Ausgabe des umgekehrten Wortes
 
 	system("pause");
 
