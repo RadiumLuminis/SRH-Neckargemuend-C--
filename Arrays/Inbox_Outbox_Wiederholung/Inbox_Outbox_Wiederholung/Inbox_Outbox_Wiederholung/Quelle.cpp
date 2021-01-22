@@ -53,6 +53,27 @@ void main()
 
 	cout << outbox2 << endl;									//Ausgabe des umgekehrten Wortes
 
+	//Inbox ohne e/E in die Outbox schleifen
+
+	char outbox3[41];											//Und wieder, und wieder, und wieder...
+
+	int z2 = 0;													//Zweite Zählvariable und so
+
+	for (int i2 = 0; inbox[i2] != '\0'; i2++)					//Die Schleife kennen wir schon, läuft bis zum Ende des Eingabe
+	{
+		if (inbox[i2] != 'e' && inbox[i2] != 'E')				//Prüft, ob KEIN e oder E vorhanden ist
+		{
+			outbox3[z2] = inbox[i2];							//Wenn Prüfung = True (Kein e/E), dann Inbox in Outbox (zweite Zählvariable)
+			z2++;												//Wichtig: Nur dann zweite Zählvariable erhöhen
+		}
+	}
+	outbox3[z2] = '\0';											//Nullterminierung nicht vergessen
+
+	cout << outbox3 << endl;									//Ausgabe des Wortes ohne jegliche e/E
+
+
+
+
 	system("pause");
 
 }
