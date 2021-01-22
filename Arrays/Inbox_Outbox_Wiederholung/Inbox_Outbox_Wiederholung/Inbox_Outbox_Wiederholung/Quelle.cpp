@@ -5,13 +5,21 @@ using namespace std;
 
 void main()
 {
-	std::locale::global(std::locale("German_germany"));			//Umlaute Verwenden können
+	//--------Anlegen der Variablen und Eingabe---------------------------------------------------------------------------------------------------------
+
+
+	std::locale::global(std::locale("German_germany"));			//Umlaute Verwenden können, kein Zwang
 
 	char inbox[20], outbox[41];									//Inbox und Outbox anlegen, Outbox ist doppelt so groß
 
 	cout << "Wort: "; cin >> inbox;								//Wort soll eingegeben werden
 
-	//in die Outbox schleifen
+
+
+
+
+	//-------------Aufgabe 1: in die Outbox schleifen----------------------------------------------------------------------------------------------------
+
 
 	/*
 	int i;
@@ -22,7 +30,11 @@ void main()
 	outbox[i] = '\0';
 	*/
 
-	//Mit Sternchen in Outbox schleifen
+
+
+
+	//-------------Aufgabe 2: Mit Sternchen in Outbox schleifen-------------------------------------------------------------------------------------------
+	
 
 	int i, a = 0;												//Zwei Zählvariablen anlegen
 	for (i = 0; inbox[i] != '\0' ; i++)							//Schleife, läuft bis zum Wortende (Nullterminierung)
@@ -39,7 +51,10 @@ void main()
 	cout << "Länge des Wortes: " << i << endl;					//Ausgabe der Länge des Wortes
 
 
-	//Inbox umgekehrt in Outbox schleifen
+
+
+	//-------------Aufgabe 3: Inbox umgekehrt in Outbox schleifen-------------------------------------------------------------------------------------------
+
 
 	char outbox2[41];											//Noch ein Array
 
@@ -71,7 +86,11 @@ void main()
 
 	cout << outbox3 << endl;									//Ausgabe des Wortes ohne jegliche e/E
 
-	//Inbox in Outbox Schleife, aber durch Vokalfilter jagen
+
+
+
+	//-------------Aufgabe 4: Ohne Vokale ausgeben, mit Vokalfilter-------------------------------------------------------------------------------------------
+
 
 	char vokalfilter[] = { 'a','e','i','o','u','A','E','I','O','U', '\0' };
 	char outbox4[41];											//Vokalfilter angelegt, neues Array zum Reinschreiben
