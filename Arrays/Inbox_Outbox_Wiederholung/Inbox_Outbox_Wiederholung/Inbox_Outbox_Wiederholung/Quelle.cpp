@@ -93,7 +93,8 @@ void main()
 
 
 	char vokalfilter[] = { 'a','e','i','o','u','A','E','I','O','U', '\0' };
-	char outbox4[41];											//Vokalfilter angelegt, neues Array zum Reinschreiben
+
+	char outbox4[41];											//^Vokalfilter angelegt^, neues Array zum Reinschreiben
 
 	int z3 = 0;													//Zweite Zählvariable
 	bool toggle = false;										//Flagg, um auf Vokal zu verweisen
@@ -117,10 +118,12 @@ void main()
 		}
 		else
 		{
-																//Wenn false, sprich wenn ein Vokal vorliegt, setzten wir die Flagg wieder zurück (=der Buchstabe wird nicht geschrieben)
-		}
-		{
-			toggle = false;
+			toggle = false;										//Wenn false, sprich wenn ein Vokal vorliegt, setzten wir die Flagg wieder zurück (=der Buchstabe wird nicht geschrieben)
+
+			//Kleine (nicht notwendige!) Änderung zur Verdeutlichung
+			outbox4[z3] = ' ';
+			z3++;
+			//EInfach Zeilen Auskommentieren, wenn "normales" Ergebnis erwartet wird
 		}
 
 	}
@@ -128,6 +131,50 @@ void main()
 
 	cout << outbox4 << endl;									//Ausgabe des Wortes ohne Vokale
 
+
+
+
+	//-------------Aufgabe 5: Nur Vokale ausgeben, mit Konsonantenfilter-------------------------------------------------------------------------------------------
+
+	char konstantenfilter[] = {'b', 'B', 'c', 'C', 'd', 'D', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z', '\0'};
+
+	char outbox5[41];											//^Konstantenfilter angelegt^, neues Array zum Reinschreiben
+
+	int z4 = 0;													//Zweite Zählvariable
+	bool toggle2 = false;										//Flagg, um auf Vokal zu verweisen
+
+	for (int i4 = 0; inbox[i4] != '\0'; i4++)					//Die äußere Schleife, die wiederhol ich net nochmal (s.o.)
+	{
+		for (int a2 = 0; konstantenfilter[a2] != '\0'; a2++)	//Die innere Schleife, Sie durchläuft den vorher bestimmten Konsonantenfilter
+			//Wir könnten hier anstatt konstantenfilter[a2] != '\0' auch die Länge des Konsonantenfilters angeben:
+			// a2 <= sizeof(konstantenfilter)
+		{
+			if (inbox[i4] == konstantenfilter[a2])				//Prüft, ob ein Vokal vorliegt
+			{
+				toggle2 = true;									//Wenn true, dann wird die Flagg auf true gesetzt
+				break;											//Optimierung, geht direkt aus der inneren Schleife raus, wenn Konsonant gefunden wurde
+			}
+		}														//Hier endet die inner Schleife
+
+		if (toggle2 == false)									//Jetzt prüfen wir, ob die Flagg gesetzt wurde, sprich ob ein Vokal vorliegt
+		{
+			outbox5[z4] = inbox[i4];							//Wenn true, dann schreiben wir (wie gewohnt) den Wert der Inbox in die Outbox
+			z4++;												//Zählvariable für die Outbox läuft nur mit, wenn diese auch benutzt wurde
+		}
+		else
+		{
+			toggle2 = false;									//Wenn false, sprich wenn ein Vokal vorliegt, setzten wir die Flagg wieder zurück (=der Buchstabe wird nicht geschrieben)
+
+			//Kleine (nicht notwendige!) Änderung zur Verdeutlichung
+			outbox5[z4] = ' ';
+			z4++;												
+			//EInfach Zeilen Auskommentieren, wenn "normales" Ergebnis erwartet wird
+		}
+
+	}
+	outbox5[z4] = '\0';											//Nullterminierung nicht vergessen
+
+	cout << outbox5 << endl;									//Ausgabe des Wortes ohne Vokale
 
 
 	system("pause");
