@@ -71,6 +71,43 @@ void main()
 
 	cout << outbox3 << endl;									//Ausgabe des Wortes ohne jegliche e/E
 
+	//Inbox in Outbox Schleife, aber durch Vokalfilter jagen
+
+	char vokalfilter[] = { 'a','e','i','o','u','A','E','I','O','U', '\0' };
+	char outbox4[41];											//Vokalfilter angelegt, neues Array zum Reinschreiben
+
+	int z3 = 0;													//Zweite Zählvariable
+	bool toggle = false;										//Flagg, um auf Vokal zu verweisen
+
+	for (int i3 = 0; inbox[i3] != '\0'; i3++)					//Die äußere Schleife, die wiederhol ich net nochmal (s.o.)
+	{
+		for (int a = 0; vokalfilter[a] != '\0'; a++)			//Die innere Schleife, Sie durchläuft den vorher bestimmten Vokalfilter
+			//Wir könnten hier anstatt vokalfilter[a] != '0' auch die Länge des Vokalfilters angeben:
+			// a <= sizeof(vokalfilter)
+		{
+			if (inbox[i3] == vokalfilter[a])					//Prüft, ob ein Vokal vorliegt
+			{
+				toggle = true;									//Wenn true, dann wird die Flagg auf true gesetzt
+			}
+		}														//Hier endet die inner Schleife
+
+		if (toggle == false)									//Jetzt prüfen wir, ob die Flagg gesetzt wurde, sprich ob ein Vokal vorliegt
+		{
+			outbox4[z3] = inbox[i3];							//Wenn true, dann schreiben wir (wie gewohnt) den Wert der Inbox in die Outbox
+			z3++;												//Zählvariable für die Outbox läuft nur mit, wenn diese auch benutzt wurde
+		}
+		else
+		{
+																//Wenn false, sprich wenn ein Vokal vorliegt, setzten wir die Flagg wieder zurück (=der Buchstabe wird nicht geschrieben)
+		}
+		{
+			toggle = false;
+		}
+
+	}
+	outbox4[z3] = '\0';											//Nullterminierung nicht vergessen
+
+	cout << outbox4 << endl;									//Ausgabe des Wortes ohne Vokale
 
 
 
