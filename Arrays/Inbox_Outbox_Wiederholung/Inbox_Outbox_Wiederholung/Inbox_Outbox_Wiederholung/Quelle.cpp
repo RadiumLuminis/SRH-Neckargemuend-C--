@@ -38,6 +38,9 @@ void main()
 	cout << outbox << endl;										//Ausgabe des Wortes mit Sternchen
 	cout << "Länge des Wortes: " << i << endl;					//Ausgabe der Länge des Wortes
 
+
+	//Inbox umgekehrt in Outbox schleifen
+
 	char outbox2[41];											//Noch ein Array
 
 	int laenge = i-1, z;										//Zwei Zählvariablen anlegen

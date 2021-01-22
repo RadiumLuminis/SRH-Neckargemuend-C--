@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Arrays",
+    "\\Arrays\\Inbox_Outbox_Wiederholung",
+    "\\Arrays\\Inbox_Outbox_Wiederholung\\Inbox_Outbox_Wiederholung"
   ],
-  "SelectedNode": "\\Inbox_Outbox_Wiederholung.sln",
+  "SelectedNode": "\\Arrays\\Inbox_Outbox_Wiederholung\\Inbox_Outbox_Wiederholung\\Inbox_Outbox_Wiederholung.sln",
   "PreviewInSolutionExplorer": false
 }
