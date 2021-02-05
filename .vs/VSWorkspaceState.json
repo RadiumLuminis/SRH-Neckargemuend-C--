@@ -2,11 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Arrays",
-    "\\Arrays\\Typecasting, ASCII",
-    "\\Arrays\\Typecasting, ASCII\\Casting",
-    "\\Arrays\\Typecasting, ASCII\\Casting\\Casting",
-    "\\Unterprogramme und Funktionen"
+    "\\Unterprogramme und Funktionen",
+    "\\Unterprogramme und Funktionen\\UP und Funktionen",
+    "\\Unterprogramme und Funktionen\\UP und Funktionen\\UPundFunktionen"
   ],
-  "SelectedNode": "\\Arrays\\Typecasting, ASCII\\Casting\\Casting\\Casting.vcxproj.filters",
+  "SelectedNode": "\\Unterprogramme und Funktionen\\UP und Funktionen\\UPundFunktionen\\UPundFunktionen.sln",
   "PreviewInSolutionExplorer": false
 }
