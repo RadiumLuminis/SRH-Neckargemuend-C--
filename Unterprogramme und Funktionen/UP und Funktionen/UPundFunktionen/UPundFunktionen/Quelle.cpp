@@ -63,7 +63,7 @@ int up3(int foo, int ba)
 }
 
 
-// up3 - Überladen von Funktionen -------------------------------------------------------------------------------------------------------------------
+// up3 - Überladen von Funktionen, andere Funktion, aber gleicher Name ------------------------------------------------------------------------------
 
 int up3(int foo, int ba, int bang)
 {
