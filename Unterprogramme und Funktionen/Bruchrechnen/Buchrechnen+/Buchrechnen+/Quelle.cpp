@@ -1,6 +1,7 @@
 //Aufgabe zum Thema Bruchrechnen vom 05.02.2021
 //Sven Krusch
 
+#include <math.h>
 #include <iostream>
 using namespace std;
 
@@ -10,6 +11,7 @@ double subtrahieren(int, int, int, int);
 double multiplizieren(int, int, int, int);
 double dividieren(int, int, int, int);
 void Kuerzen(int [], int, int, int);
+void UnechterBruch(int, int);
 
 void main()																								//Hier wird das Hauptprogramm aufgerufen
 {
@@ -22,7 +24,7 @@ void main()																								//Hier wird das Hauptprogramm aufgerufen
 	int x, i;
 	for (x = 2; x <= 100; x++)
 	{
-		for (i = 2; i <= x; i++)
+		for (i = 2; i <= (int) sqrt(x); i++)
 		{
 			if (x % i == 0 && x != i)
 			{
@@ -167,7 +169,7 @@ void Kuerzen(int prime[], int Laenge, int z, int n)														//Unterfunktion
 		}
 	}
 
-	if ((double)z / (double)n > 1)
+	if ((double)z / (double)n > 1)																		//Ruft Unterprogramm "UnechterBruch" auf, wenn Zahl größer 1
 	{
 		UnechterBruch(z, n);
 	}
@@ -178,9 +180,17 @@ void Kuerzen(int prime[], int Laenge, int z, int n)														//Unterfunktion
 
 }
 
-void UnechterBruch(int z, int n)
+void UnechterBruch(int z, int n)																		//Unterfunktion UnechterBruch, nimmt Zähler und Nenner entgegen
 {
+	int a = 0;																							//Ganzzahl vor dem Bruch
+	while (true)
+	{
+		z -= n;																							//Zieht den Nenner vom Zähler ab
+		a++;																							//Rechnet 1 auf die Ganzzahl vor dem Bruch dazu
+		if ((double)z / (double)n < 1)
+			break;																						//Hört auf, wenn der Bruch nicht mehr unecht ist
+	}
 
-
+	cout << "Als gekuerzter Bruch:\n" << a << " " << z << "/" << n << endl;
 }
 

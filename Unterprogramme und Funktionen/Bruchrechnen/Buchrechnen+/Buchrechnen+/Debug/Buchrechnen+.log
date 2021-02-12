@@ -1,3 +1,3 @@
 ﻿  Quelle.cpp
-C:\Users\svenk\Documents\GitHub\SRH-Neckargemuend-C++\Unterprogramme und Funktionen\Bruchrechnen\Buchrechnen+\Buchrechnen+\Quelle.cpp(15,1): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
+C:\Users\svenk\Documents\GitHub\SRH-Neckargemuend-C++\Unterprogramme und Funktionen\Bruchrechnen\Buchrechnen+\Buchrechnen+\Quelle.cpp(17,1): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
   Buchrechnen+.vcxproj -> C:\Users\svenk\Documents\GitHub\SRH-Neckargemuend-C++\Unterprogramme und Funktionen\Bruchrechnen\Buchrechnen+\Debug\Buchrechnen+.exe
