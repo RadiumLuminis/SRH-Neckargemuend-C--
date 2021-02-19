@@ -9,7 +9,6 @@ double addieren(int, int, int, int);
 double subtrahieren(int, int, int, int);
 double multiplizieren(int, int, int, int);
 double dividieren(int, int, int, int);
-double Kuerzen(int, int);
 
 void main()																								//Hier wird das Hauptprogramm aufgerufen
 {

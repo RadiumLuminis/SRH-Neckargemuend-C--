@@ -47,49 +47,44 @@ void main()																								//Hier wird das Hauptprogramm aufgerufen
 	cout << "Ersten Bruch eingeben: (zaehler/nenner)" << endl; cin >> z1 >> p >> n1;						//Variablen werden eingegeben
 	cout << "Zweiten Bruch eingeben: (zaehler/nenner)" << endl; cin >> z2 >> p >> n2;
 
-	cout << "Addieren, Subtrahieren, Multiplizieren oder Dupliziern? (a, s, m, d)" << endl; cin >> p;		//Eingabe, welche Rechenoperation durchgeführt werden soll
 
-	if (p == 'a')																							//Abfrage, prüft ob Addiert werden soll
+	//----Switch-Case vom 19.02 ----------------------------------------------------------------------------------------------------------------------------------
+
+	while (p != '1')																							//Schleife, die aufhört, wenn "p" auf '1' steht
 	{
-		double ausgabe = addieren(z1, z2, n1, n2);																//Ruft die Unterfunktion addieren() mit Zählern und Nennern als Parameter auf
-		cout << "Die Summe der Brueche lautet: " << endl << ausgabe << endl;									//Gibt das Ergebnis aus
+		cout << "Addieren, Subtrahieren, Multiplizieren oder Dupliziern? (+, -, *, /)" << endl; cin >> p;		//Eingabe, welche Rechenoperation durchgeführt werden soll
+		
 
-		//Kürzen
-		Kuerzen(prime, Laenge, z1 * n2 + z2 * n1, n1 * n2);
-		//cout << "Als Bruch geschrieben: " << endl << z1 * n2 + z2 * n1 << "/" << n1 * n2 << endl;
-	}
-	else {
-		if (p == 's')																						//Abfrage, prüft ob Subtrahiert werden soll
+		switch (p)																								//Switch Abfrage, die die Variable "p" testet
 		{
-			double ausgabe = subtrahieren(z1, z2, n1, n2);														//Ruft die Unterfunktion subtrahieren() mit Zählern und Nennern als Parameter  auf
-			cout << "Die Differenz der Brueche lautet: " << endl << ausgabe << endl;							//Ausgabe
+		case'+':																								//Wenn "p" den Wert	'+' hat:
+			cout << "Die Summe der Brueche lautet: " << addieren(z1, z2, n1, n2) << endl << endl;					//Gib die Summe aus
+			Kuerzen(prime, Laenge, (z1 * n2) + (z2 * n1), n1 * n2);													//Kürzt den Bruch
+			p = '1';																								//Setzt p aus 1 (Um Schleife zu beenden)
+			break;																									//Beendet die Switch-Abfrage
+				
+		case'-':																								//Wenn "p" den Wert	'-' hat:
+			cout << "Die Differenz der Brueche lautet: " << subtrahieren(z1, z2, n1, n2) << endl << endl;			//Gibt die Differenz aus
+			Kuerzen(prime, Laenge, (z1 * n2) + (z2 * n1), n1 * n2);													//Kürzt den Bruch
+			p = '1';																								//Setzt p aus 1 (Um Schleife zu beenden)
+			break;																									//Beendet die Switch-Abfrage
 
-			//Kürzen
-			Kuerzen(prime, Laenge, z1 * n2 - z2 * n1, n1 * n2);
-			//cout << "Als Bruch geschrieben: " << endl << z1 * n2 - z2 * n1 << "/" << n1 * n2 << endl;
+		case'*':																								//Wenn "p" den Wert	'*' hat:
+			cout << "Das Produkt der Brueche lautet: " << multiplizieren(z1, z2, n1, n2) << endl << endl;			//Gibt das Produkt aus
+			Kuerzen(prime, Laenge, (z1 * n2) + (z2 * n1), n1 * n2);													//Kürzt den Bruch
+			p = '1';																								//Setzt p aus 1 (Um Schleife zu beenden)
+			break;																									//Beendet die Switch-Abfrage
+
+		case'/':																								//Wenn "p" den Wert '/' hat:
+			cout << "Der Quotient der Brueche lautet: " << dividieren(z1, z2, n1, n2) << endl << endl;				//Gibt den Quotienten aus
+			Kuerzen(prime, Laenge, (z1 * n2) + (z2 * n1), n1 * n2);													//Kürzt den Bruch
+			p = '1';																								//Setzt p aus 1 (Um Schleife zu beenden)
+			break;																									//Beendet die Switch-Abfrage
+
+		default:																								//Wenn "p" einen anderen Wert hat:
+			cout << "Ungültige Eingabe!" << endl;																	//Gibt "Ungültige Eingabe!" aus und wiederholt die Schleife (p ist nicht '1')
 		}
-		else {
-			if (p == 'm')																					//Abfrage, prüft ob Multipliziert werden soll
-			{
-				double ausgabe = multiplizieren(z1, z2, n1, n2);												//Ruft die Unterfunktion multiplizieren() mit Zählern und Nennern als Parameter  auf
-				cout << "Das Produkt der Brueche lautet: " << endl << ausgabe << endl;
 
-				//Kürzen
-				Kuerzen(prime, Laenge, z1 * z2, n1 * n2);
-				//cout << "Als Bruch geschrieben: " << endl << z1 * z2 << "/" << n1 * n2 << endl;
-			}
-			else {
-				if (p == 'd')																				//Abfrage, prüft ob Dividiert werden soll
-				{
-					double ausgabe = dividieren(z1, z2, n1, n2);												//Ruft die Unterfunktion dividieren() mit Zählern und Nennern als Parameter  auf
-					cout << "Der Quotient der Brueche lautet: " << endl << ausgabe << endl;
-
-					//Kürzen
-					Kuerzen(prime, Laenge, z1 * n2, n1 * z2);
-					//cout << "Als Bruch geschrieben: " << endl << z1 * n2 << "/" << n1 * z2 << endl;
-				}
-			}
-		}
 	}
 
 	system("pause");
@@ -143,7 +138,7 @@ double dividieren(int z1, int z2, int n1, int n2)														//Unterfunktion d
 																													//(Kommentar am Rande: So funktioniert Dividierern bei Brüchen)
 
 
-	double ausgabe = (double) z / (double) n;																	//Dividiert Zähler durch Nenner
+	double ausgabe = (double) z / (double) n;																//Dividiert Zähler durch Nenner
 
 	return ausgabe;																							//Gibt das Ergebnis als Wert zurück
 }
